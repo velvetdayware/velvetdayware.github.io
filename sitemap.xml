@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://velvetdayware.com/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://velvetdayware.com/sustainability.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://velvetdayware.com/gift-cards.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://velvetdayware.com/shipping-and-returns.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://velvetdayware.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://velvetdayware.com/checkout.html</loc><changefreq>monthly</changefreq
+><priority>0.6</priority></url>
+  <url><loc>https://velvetdayware.com/thanks.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://velvetdayware.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://velvetdayware.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://velvetdayware.com/cookies.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+</urlset>

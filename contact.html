@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Velvet Dayware | Richmond, VA</title>
+<meta name="description" content="Contact Velvet Dayware in Richmond, VA. Questions about sizing, orders, or gift cards? We're here to help by phone or email.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Contact Velvet Dayware">
+<meta property="og:description" content="Reach Velvet Dayware by phone or email. Located in Richmond, VA.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/css/intlTelInput.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<style>.iti, #phone {width: 100%}</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="overflow-x-hidden">
+
+<nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Velvet Dayware logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="gift-cards.html" class="nav-link">Gift Cards</a></li>
+      <li><a href="shipping-and-returns.html" class="nav-link">Shipping & Returns</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="gift-cards.html">Gift Cards</a></li>
+    <li><a href="shipping-and-returns.html">Shipping & Returns</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag</h3>
+    <button class="cart-close-btn" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Your bag is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <a href="checkout.html" class="btn-primary cart-checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="page-hero-simple">
+  <div class="page-hero-gradient"></div>
+  <div class="container page-hero-content">
+    <span class="section-eyebrow" data-aos="fade-up">We're Here</span>
+    <h1 class="page-hero-title" data-aos="fade-up" data-aos-delay="100">Get in Touch</h1>
+    <p class="page-hero-desc" data-aos="fade-up" data-aos-delay="200">Questions about sizing, your order, gift cards, or anything else — reach out and we'll respond within 2 business days.</p>
+  </div>
+</div>
+
+<section class="inner-section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-form-col" data-aos="fade-right">
+        <h2 class="section-heading">Send us a message</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name <span class="required-star">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required-star">*</span></label>
+            <input type="tel" id="phone" name="phone" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span class="required-star">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required class="form-input form-textarea"></textarea>
+          </div>
+          <div class="form-group privacy-check-group">
+            <label class="privacy-label">
+              <input type="checkbox" id="privacyCheck" required class="privacy-checkbox">
+              <span>I have read and agree to the <a href="privacy.html" class="form-link">Privacy Policy</a></span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary contact-submit-btn">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info-col" data-aos="fade-left">
+        <h2 class="section-heading">Contact Information</h2>
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+18046733450">+1 (804) 673-3450</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@velvetdayware.com">info@velvetdayware.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Address</h4>
+              <p>1601 Willow Lawn Dr Suite 304<br>Richmond, VA 23230</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 2 business days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="container">
+    <div class="map-wrapper" data-aos="fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.2!2d-77.5218!3d37.5965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b1115b5e8b0001%3A0x1234567890abcdef!2s1601+Willow+Lawn+Dr%2C+Richmond%2C+VA+23230!5e0!3m2!1sen!2sus!4v1234567890"
+        width="100%"
+        height="400"
+        style="border:0; border-radius:1.25rem;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Velvet Dayware location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo.svg" alt="Velvet Dayware" class="footer-logo-img"></div>
+    <p class="footer-tagline">Dressed in minutes. Ready for anything.</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gift-cards.html">Gift Cards</a>
+      <a href="shipping-and-returns.html">Shipping & Returns</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </nav>
+    <div class="footer-contact-row">
+      <a href="tel:+18046733450"><i class="fa-solid fa-phone"></i> +1 (804) 673-3450</a>
+      <a href="mailto:info@velvetdayware.com"><i class="fa-solid fa-envelope"></i> info@velvetdayware.com</a>
+      <span><i class="fa-solid fa-location-dot"></i> 1601 Willow Lawn Dr Suite 304, Richmond, VA 23230</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Velvet Dayware. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="float-widget" id="floatWidget">
+  <button class="float-main-btn" id="floatToggle" aria-label="Contact options">
+    <i class="fa-solid fa-comment-dots" id="floatIcon"></i>
+  </button>
+  <div class="float-options" id="floatOptions">
+    <a href="tel:+18046733450" class="float-option"><span class="float-label">Call Us</span><div class="float-option-icon"><i class="fa-solid fa-phone"></i></div></a>
+    <a href="mailto:info@velvetdayware.com" class="float-option"><span class="float-label">Email Us</span><div class="float-option-icon"><i class="fa-solid fa-envelope"></i></div></a>
+  </div>
+</div>
+
+<div id="cookieBanner" class="cookie-banner" style="display:none;">
+  <div class="cookie-content">
+    <p><strong>We use cookies</strong> to improve your experience.</p>
+    <div class="cookie-btns">
+      <button id="cookieAccept" class="cookie-btn-accept">Accept All</button>
+      <button id="cookieReject" class="cookie-btn-reject">Reject All</button>
+      <button id="cookieCustomize" class="cookie-btn-customize">Customize</button>
+    </div>
+  </div>
+</div>
+<div id="cookieModal" class="cookie-modal" style="display:none;">
+  <div class="cookie-modal-box">
+    <h3>Cookie Preferences</h3>
+    <p>Manage your cookie settings.</p>
+    <div class="cookie-option"><label><input type="checkbox" checked disabled> Essential Cookies <span class="always-on">Always On</span></label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="analyticsCookies"> Analytics Cookies</label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="marketingCookies"> Marketing Cookies</label></div>
+    <div class="cookie-modal-btns">
+      <button id="cookieSavePrefs" class="cookie-btn-accept">Save Preferences</button>
+      <button id="cookieModalClose" class="cookie-btn-reject">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/js/intlTelInput.min.js"></script>
+<script src="js/cookie-consent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

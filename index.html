@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvet Dayware – Everyday Casual Dresses for Women | Richmond, VA</title>
+<meta name="description" content="Velvet Dayware offers curated everyday casual dresses in breathable fabrics. Sizes XS–3XL, simple pricing, gift cards accepted. Based in Richmond, VA.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Velvet Dayware – Everyday Casual Dresses for Women">
+<meta property="og:description" content="Relaxed silhouettes in cotton, linen blends, and soft jersey. Sizes XS through 3XL. Simple pricing, no hidden fees.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/css/intlTelInput.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Velvet Dayware logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="gift-cards.html" class="nav-link">Gift Cards</a></li>
+      <li><a href="shipping-and-returns.html" class="nav-link">Shipping & Returns</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="gift-cards.html">Gift Cards</a></li>
+    <li><a href="shipping-and-returns.html">Shipping & Returns</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- Cart Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag</h3>
+    <button class="cart-close-btn" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Your bag is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <a href="checkout.html" class="btn-primary cart-checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-gradient-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text-block" data-aos="fade-up">
+      <span class="hero-eyebrow">Effortless. Every day.</span>
+      <h1 class="hero-headline">
+        Dresses that feel like<br>
+        <span class="typed-wrapper"><span id="typedTarget"></span></span>
+      </h1>
+      <p class="hero-description">
+        From school drop-off to coffee meetings to wherever the day takes you — Velvet Dayware dresses move with your life. Breathable fabrics, relaxed silhouettes, and sizes XS through 3XL.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#catalog" class="btn-primary">Shop the Collection</a>
+        <a href="#how-it-works" class="btn-ghost">How It Works</a>
+      </div>
+    </div>
+    <!-- Hero Feature Cards -->
+    <div class="hero-cards-row" data-aos="fade-up" data-aos-delay="200">
+      <div class="hero-card">
+        <div class="hero-card-icon"><i class="fa-solid fa-wind"></i></div>
+        <h4>Breathable Fabrics</h4>
+        <p>Cotton, linen blends, and soft jersey that feel comfortable all day, whatever the weather.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon"><i class="fa-solid fa-ruler-horizontal"></i></div>
+        <h4>Sizes XS – 3XL</h4>
+        <p>Inclusive sizing because looking effortless should be available to every woman, full stop.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon"><i class="fa-solid fa-tag"></i></div>
+        <h4>Simple Pricing</h4>
+        <p>No hidden fees. Gift cards accepted at checkout. What you see is exactly what you pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About / Story Section -->
+<section class="story-section" id="how-it-works">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-image-block" data-aos="fade-right">
+        <div class="story-img-wrapper">
+          <img src="images/woman-morning-routine-dress.jpg" alt="Woman in a relaxed linen dress preparing for her day at home" class="story-img">
+          <div class="story-img-accent"></div>
+        </div>
+      </div>
+      <div class="story-text-block" data-aos="fade-left">
+        <span class="section-eyebrow">Our Philosophy</span>
+        <h2 class="section-heading">Dressed in minutes. Ready for anything.</h2>
+        <p class="body-text">You shouldn't need to think hard about getting dressed. Velvet Dayware exists for the woman who wants to open her closet, reach for something, and feel confident — without the mental overhead of a full styling session.</p>
+        <p class="body-text">Each dress in our collection is chosen with a specific scenario in mind: the Tuesday that starts with a pediatric appointment and ends with an impromptu dinner. The Friday that's half remote work, half errands. The weekend that somehow fills itself completely.</p>
+        <p class="body-text">Our fabrics breathe. Our silhouettes move. Our sizing is real. That's the whole idea.</p>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Catalog Section -->
+<section class="catalog-section" id="catalog">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-eyebrow">The Collection</span>
+      <h2 class="section-heading">Everyday dresses, curated for real life</h2>
+      <p class="section-subtext">Each piece selected for versatility, comfort, and that "I didn't try too hard" quality that's actually the hardest thing to achieve.</p>
+    </div>
+    <div class="product-grid">
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-img-wrap">
+          <img src="images/linen-wrap-dress-terracotta.jpg" alt="Terracotta linen wrap dress with relaxed fit and tie waist" class="product-img">
+          <div class="product-badge">Linen Blend</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Terracotta Linen Wrap</h3>
+          <p class="product-desc">A relaxed wrap silhouette in a warm terracotta linen blend. Adjustable tie waist. Moves beautifully in a breeze.</p>
+          <div class="product-sizes">XS · S · M · L · XL · 2XL · 3XL</div>
+          <div class="product-footer">
+            <span class="product-price">$68</span>
+            <button class="add-to-cart-btn" data-name="Terracotta Linen Wrap" data-price="68" data-img="images/linen-wrap-dress-terracotta.jpg">Add to Bag</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="product-img-wrap">
+          <img src="images/cotton-midi-dress-sage.jpg" alt="Sage green cotton midi dress with short sleeves and relaxed bodice" class="product-img">
+          <div class="product-badge">100% Cotton</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Sage Cotton Midi</h3>
+          <p class="product-desc">Soft 100% cotton in a calming sage. Midi length, short sleeves, and a relaxed bodice that never feels restrictive.</p>
+          <div class="product-sizes">XS · S · M · L · XL · 2XL · 3XL</div>
+          <div class="product-footer">
+            <span class="product-price">$54</span>
+            <button class="add-to-cart-btn" data-name="Sage Cotton Midi" data-price="54" data-img="images/cotton-midi-dress-sage.jpg">Add to Bag</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="product-img-wrap">
+          <img src="images/jersey-shirtdress-navy.jpg" alt="Navy soft jersey shirtdress with button front and belted waist" class="product-img">
+          <div class="product-badge">Soft Jersey</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Navy Jersey Shirtdress</h3>
+          <p class="product-desc">A classic shirtdress silhouette in soft jersey that drapes without clinging. Wear belted or loose — both look intentional.</p>
+          <div class="product-sizes">XS · S · M · L · XL · 2XL · 3XL</div>
+          <div class="product-footer">
+            <span class="product-price">$62</span>
+            <button class="add-to-cart-btn" data-name="Navy Jersey Shirtdress" data-price="62" data-img="images/jersey-shirtdress-navy.jpg">Add to Bag</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-img-wrap">
+          <img src="images/linen-blend-sundress-cream.jpg" alt="Cream linen blend sundress with spaghetti straps and smocked bodice" class="product-img">
+          <div class="product-badge">Linen Blend</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Cream Smocked Sundress</h3>
+          <p class="product-desc">Smocked bodice, spaghetti straps, and a flowy skirt in cream linen blend. Effortlessly warm-weather ready.</p>
+          <div class="product-sizes">XS · S · M · L · XL · 2XL · 3XL</div>
+          <div class="product-footer">
+            <span class="product-price">$58</span>
+            <button class="add-to-cart-btn" data-name="Cream Smocked Sundress" data-price="58" data-img="images/linen-blend-sundress-cream.jpg">Add to Bag</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Checklist Section -->
+<section class="checklist-section" id="what-we-offer">
+  <div class="container">
+    <div class="checklist-grid">
+      <div class="checklist-text-col" data-aos="fade-right">
+        <span class="section-eyebrow">What's Included</span>
+        <h2 class="section-heading">Everything you need, nothing you don't</h2>
+        <p class="body-text">When you shop with Velvet Dayware, here's exactly what you get — no fine print, no surprises.</p>
+        <div class="checklist-image-wrap">
+          <img src="images/dress-collection-flatlay.jpg" alt="Flat lay of multiple casual dresses in natural fabrics arranged on a light surface" class="checklist-img">
+        </div>
+      </div>
+      <div class="checklist-items-col" data-aos="fade-left">
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Curated, not overwhelming</h4>
+            <p>Every dress is hand-selected for everyday wearability — not just for how it looks on a model.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Breathable fabric guarantee</h4>
+            <p>Every piece is made from cotton, linen blend, or soft jersey — nothing that makes you feel like you're wearing a garbage bag in July.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Full size range, XS through 3XL</h4>
+            <p>Every style is available in all sizes. No "extended sizes" on a separate page — one collection, all sizes.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Transparent, flat pricing</h4>
+            <p>The price you see is the price you pay. No "processing fees" appearing at checkout. No size surcharges.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Gift card redemption at checkout</h4>
+            <p>Apply a Velvet Dayware gift card during checkout — partial or full payment, whichever you need.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Clear shipping & return policy</h4>
+            <p>Shipping timelines and return conditions are spelled out in plain language — no hunting through pages of legal text.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Detailed fabric & care information</h4>
+            <p>Each product listing includes fabric composition, care instructions, and honest fit notes.</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="check-content">
+            <h4>Responsive customer support</h4>
+            <p>Questions about sizing, fabric, or your order? Reach us by phone or email — real people respond.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fabric Feature Section -->
+<section class="fabric-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-eyebrow">The Fabrics</span>
+      <h2 class="section-heading">Why fabric choice changes everything</h2>
+      <p class="section-subtext">When you're wearing the same dress from 7am to 7pm, what it's made of matters as much as how it looks.</p>
+    </div>
+    <div class="fabric-cards-row">
+      <div class="fabric-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="fabric-img-wrap">
+          <img src="images/cotton-fabric-texture-closeup.jpg" alt="Close up texture of soft breathable cotton fabric in warm white tone" class="fabric-img">
+        </div>
+        <div class="fabric-card-body">
+          <h3>100% Cotton</h3>
+          <p>Natural, breathable, and soft against skin. Cotton washes well, holds its shape, and gets better with every wear. Our cotton dresses are pre-washed for minimal shrinkage.</p>
+        </div>
+      </div>
+      <div class="fabric-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="fabric-img-wrap">
+          <img src="images/linen-blend-fabric-texture.jpg" alt="Detailed view of textured linen blend fabric with natural weave pattern in earthy tones" class="fabric-img">
+        </div>
+        <div class="fabric-card-body">
+          <h3>Linen Blend</h3>
+          <p>The texture of linen with added softness from the blend. Naturally temperature-regulating, which means it works in warm weather and layers well when it's cooler.</p>
+        </div>
+      </div>
+      <div class="fabric-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="fabric-img-wrap">
+          <img src="images/jersey-fabric-drape-closeup.jpg" alt="Soft jersey fabric draped naturally showing smooth texture and fluid movement" class="fabric-img">
+        </div>
+        <div class="fabric-card-body">
+          <h3>Soft Jersey</h3>
+          <p>Stretchy, forgiving, and effortlessly draped. Jersey moves with your body without clinging. It's the fabric that makes getting dressed feel like putting on a comfortable sweater.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Day Scenarios Section -->
+<section class="scenarios-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-eyebrow">Real Life, Real Wear</span>
+      <h2 class="section-heading">One dress. A whole day.</h2>
+    </div>
+    <div class="scenarios-grid">
+      <div class="scenario-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="scenario-icon"><i class="fa-solid fa-school"></i></div>
+        <h4>School Drop-Off</h4>
+        <p>Out the door by 7:45. Comfortable enough to get out of the car without thinking twice about it.</p>
+      </div>
+      <div class="scenario-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="scenario-icon"><i class="fa-solid fa-mug-hot"></i></div>
+        <h4>Coffee Meeting</h4>
+        <p>You look put-together. You didn't spend an hour deciding that. Nobody needs to know the difference.</p>
+      </div>
+      <div class="scenario-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="scenario-icon"><i class="fa-solid fa-laptop"></i></div>
+        <h4>Work from Anywhere</h4>
+        <p>On a video call or at a co-working space — the kind of dress that reads professional without being stiff.</p>
+      </div>
+      <div class="scenario-card" data-aos="fade-up" data-aos-delay="180">
+        <div class="scenario-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+        <h4>Grocery Run</h4>
+        <p>Comfortable enough to walk three aisles of produce without adjusting anything. Pockets help, too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-eyebrow">Style in Motion</span>
+      <h2 class="section-heading">Dresses that look this good in real life</h2>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gallery-item tall" data-aos="fade-up" data-aos-delay="0">
+        <img src="images/woman-casual-dress-outdoor-cafe.jpg" alt="Woman in a relaxed casual dress sitting at an outdoor cafe table with coffee" class="gallery-img">
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="80">
+        <img src="images/woman-linen-dress-farmers-market.jpg" alt="Woman in a cream linen dress browsing a farmers market stall on a sunny day" class="gallery-img">
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="160">
+        <img src="images/woman-jersey-dress-walking-park.jpg" alt="Woman in a soft jersey dress walking through a leafy park path in afternoon light" class="gallery-img">
+      </div>
+      <div class="gallery-item tall" data-aos="fade-up" data-aos-delay="80">
+        <img src="images/woman-cotton-dress-home-desk.jpg" alt="Woman in a sage cotton dress working at a bright home desk with natural light" class="gallery-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gift Card CTA Section -->
+<section class="giftcard-cta-section">
+  <div class="container">
+    <div class="giftcard-cta-card" data-aos="fade-up">
+      <div class="giftcard-cta-content">
+        <span class="section-eyebrow" style="color:var(--accent-warm);">Gift Cards</span>
+        <h2 class="section-heading" style="color:var(--text-dark);">The gift of not having to choose</h2>
+        <p class="body-text" style="color:var(--text-muted);">Velvet Dayware gift cards are accepted at checkout — applied in full or in part toward any order. A thoughtful option when you want to give someone the freedom to pick exactly what suits her.</p>
+        <a href="gift-cards.html" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Learn About Gift Cards</a>
+      </div>
+      <div class="giftcard-cta-img" data-aos="fade-left" data-aos-delay="100">
+        <img src="images/velvet-dayware-gift-card-display.jpg" alt="Velvet Dayware gift card displayed elegantly on a warm linen surface with a small ribbon" class="giftcard-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.svg" alt="Velvet Dayware" class="footer-logo-img">
+    </div>
+    <p class="footer-tagline">Dressed in minutes. Ready for anything.</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gift-cards.html">Gift Cards</a>
+      <a href="shipping-and-returns.html">Shipping & Returns</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </nav>
+    <div class="footer-contact-row">
+      <a href="tel:+18046733450"><i class="fa-solid fa-phone"></i> +1 (804) 673-3450</a>
+      <a href="mailto:info@velvetdayware.com"><i class="fa-solid fa-envelope"></i> info@velvetdayware.com</a>
+      <span><i class="fa-solid fa-location-dot"></i> 1601 Willow Lawn Dr Suite 304, Richmond, VA 23230</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Velvet Dayware. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating Contact Widget -->
+<div class="float-widget" id="floatWidget">
+  <button class="float-main-btn" id="floatToggle" aria-label="Contact options">
+    <i class="fa-solid fa-comment-dots" id="floatIcon"></i>
+  </button>
+  <div class="float-options" id="floatOptions">
+    <a href="tel:+18046733450" class="float-option" aria-label="Call us">
+      <span class="float-label">Call Us</span>
+      <div class="float-option-icon"><i class="fa-solid fa-phone"></i></div>
+    </a>
+    <a href="mailto:info@velvetdayware.com" class="float-option" aria-label="Email us">
+      <span class="float-label">Email Us</span>
+      <div class="float-option-icon"><i class="fa-solid fa-envelope"></i></div>
+    </a>
+  </div>
+</div>
+
+<!-- Cookie Consent -->
+<div id="cookieBanner" class="cookie-banner" style="display:none;">
+  <div class="cookie-content">
+    <p><strong>We use cookies</strong> to improve your experience. You can accept all cookies, reject non-essential ones, or customize your preferences.</p>
+    <div class="cookie-btns">
+      <button id="cookieAccept" class="cookie-btn-accept">Accept All</button>
+      <button id="cookieReject" class="cookie-btn-reject">Reject All</button>
+      <button id="cookieCustomize" class="cookie-btn-customize">Customize</button>
+    </div>
+  </div>
+</div>
+<div id="cookieModal" class="cookie-modal" style="display:none;">
+  <div class="cookie-modal-box">
+    <h3>Cookie Preferences</h3>
+    <p>Manage your cookie settings. Essential cookies are always active.</p>
+    <div class="cookie-option">
+      <label><input type="checkbox" checked disabled> Essential Cookies <span class="always-on">Always On</span></label>
+    </div>
+    <div class="cookie-option">
+      <label><input type="checkbox" id="analyticsCookies"> Analytics Cookies</label>
+    </div>
+    <div class="cookie-option">
+      <label><input type="checkbox" id="marketingCookies"> Marketing Cookies</label>
+    </div>
+    <div class="cookie-modal-btns">
+      <button id="cookieSavePrefs" class="cookie-btn-accept">Save Preferences</button>
+      <button id="cookieModalClose" class="cookie-btn-reject">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/js/intlTelInput.min.js"></script>
+<script src="js/cookie-consent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

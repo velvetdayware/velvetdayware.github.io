@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /checkout.html
+
+Sitemap: https://velvetdayware.com/sitemap.xml

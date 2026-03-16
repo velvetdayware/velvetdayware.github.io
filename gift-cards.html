@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Cards – Velvet Dayware | Give the Gift of Effortless Style</title>
+<meta name="description" content="Velvet Dayware gift cards are accepted at checkout. Give someone the freedom to choose their own everyday dress. No expiration, no fees.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Gift Cards – Velvet Dayware">
+<meta property="og:description" content="Give the gift of effortless everyday style. Velvet Dayware gift cards accepted at checkout.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="overflow-x-hidden">
+
+<nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Velvet Dayware logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="gift-cards.html" class="nav-link active">Gift Cards</a></li>
+      <li><a href="shipping-and-returns.html" class="nav-link">Shipping & Returns</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="gift-cards.html">Gift Cards</a></li>
+    <li><a href="shipping-and-returns.html">Shipping & Returns</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag</h3>
+    <button class="cart-close-btn" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Your bag is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <a href="checkout.html" class="btn-primary cart-checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="page-hero-simple">
+  <div class="page-hero-gradient"></div>
+  <div class="container page-hero-content">
+    <span class="section-eyebrow" data-aos="fade-up">Give Something Thoughtful</span>
+    <h1 class="page-hero-title" data-aos="fade-up" data-aos-delay="100">Velvet Dayware Gift Cards</h1>
+    <p class="page-hero-desc" data-aos="fade-up" data-aos-delay="200">When you want to give someone something she'll actually use — and let her choose exactly what suits her life.</p>
+  </div>
+</div>
+
+<section class="inner-section">
+  <div class="container">
+    <div class="inner-two-col">
+      <div data-aos="fade-right">
+        <h2 class="section-heading">The gift of choosing for herself</h2>
+        <p class="body-text">Sometimes the most thoughtful gift is the one that doesn't require you to guess someone's size, color preference, or current wardrobe needs. A Velvet Dayware gift card gives her the freedom to browse the collection and pick exactly what feels right for her day-to-day life.</p>
+        <p class="body-text">Gift cards are applied at checkout — in full or in part. If the order total exceeds the card value, the remaining balance can be paid by another method. If the card covers the full order, no additional payment is needed.</p>
+        <p class="body-text">To inquire about purchasing a Velvet Dayware gift card, contact us by email or phone and we'll walk you through the options.</p>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Contact Us About Gift Cards</a>
+      </div>
+      <div data-aos="fade-left">
+        <img src="images/velvet-dayware-gift-card-display.jpg" alt="Velvet Dayware gift card displayed elegantly on a warm linen surface with a small ribbon" class="inner-img rounded-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner-section alt-bg">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-heading">How gift cards work</h2>
+    </div>
+    <div class="inner-icon-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="inner-icon-wrap"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h3>Request a Card</h3>
+        <p>Contact us to request a gift card. We'll confirm the denomination and delivery method with you.</p>
+      </div>
+      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="inner-icon-wrap"><i class="fa-solid fa-gift"></i></div>
+        <h3>Give It</h3>
+        <p>Pass along the gift card code to the recipient — digitally or as part of a physical gift.</p>
+      </div>
+      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="inner-icon-wrap"><i class="fa-solid fa-bag-shopping"></i></div>
+        <h3>She Shops</h3>
+        <p>She browses the collection, adds items to her bag, and proceeds to checkout when ready.</p>
+      </div>
+      <div class="inner-icon-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="inner-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
+        <h3>Code Applied</h3>
+        <p>At checkout, she enters the gift card code and clicks Apply. The discount is reflected immediately in her order total.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner-section">
+  <div class="container">
+    <div class="inner-faq" data-aos="fade-up">
+      <h2 class="section-heading" style="text-align:center; margin-bottom:2rem;">Gift Card FAQs</h2>
+      <div class="faq-item">
+        <h4>Do gift cards expire?</h4>
+        <p>Velvet Dayware gift cards do not have an expiration date. The recipient can use the card whenever she's ready.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can a gift card be used for a partial payment?</h4>
+        <p>Yes. If the order total exceeds the gift card balance, the remaining amount can be covered by another payment method at checkout.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are gift cards refundable?</h4>
+        <p>Gift cards are non-refundable but are transferable — the recipient can pass the code along to someone else if she chooses.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What denominations are available?</h4>
+        <p>Contact us to discuss available denominations. We'll work with you to find an amount that fits the occasion.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I give the gift card to someone?</h4>
+        <p>Once your gift card is processed, we'll provide a unique code you can share digitally or include in a physical card.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo.svg" alt="Velvet Dayware" class="footer-logo-img"></div>
+    <p class="footer-tagline">Dressed in minutes. Ready for anything.</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gift-cards.html">Gift Cards</a>
+      <a href="shipping-and-returns.html">Shipping & Returns</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </nav>
+    <div class="footer-contact-row">
+      <a href="tel:+18046733450"><i class="fa-solid fa-phone"></i> +1 (804) 673-3450</a>
+      <a href="mailto:info@velvetdayware.com"><i class="fa-solid fa-envelope"></i> info@velvetdayware.com</a>
+      <span><i class="fa-solid fa-location-dot"></i> 1601 Willow Lawn Dr Suite 304, Richmond, VA 23230</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Velvet Dayware. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="float-widget" id="floatWidget">
+  <button class="float-main-btn" id="floatToggle" aria-label="Contact options">
+    <i class="fa-solid fa-comment-dots" id="floatIcon"></i>
+  </button>
+  <div class="float-options" id="floatOptions">
+    <a href="tel:+18046733450" class="float-option"><span class="float-label">Call Us</span><div class="float-option-icon"><i class="fa-solid fa-phone"></i></div></a>
+    <a href="mailto:info@velvetdayware.com" class="float-option"><span class="float-label">Email Us</span><div class="float-option-icon"><i class="fa-solid fa-envelope"></i></div></a>
+  </div>
+</div>
+
+<div id="cookieBanner" class="cookie-banner" style="display:none;">
+  <div class="cookie-content">
+    <p><strong>We use cookies</strong> to improve your experience.</p>
+    <div class="cookie-btns">
+      <button id="cookieAccept" class="cookie-btn-accept">Accept All</button>
+      <button id="cookieReject" class="cookie-btn-reject">Reject All</button>
+      <button id="cookieCustomize" class="cookie-btn-customize">Customize</button>
+    </div>
+  </div>
+</div>
+<div id="cookieModal" class="cookie-modal" style="display:none;">
+  <div class="cookie-modal-box">
+    <h3>Cookie Preferences</h3>
+    <p>Manage your cookie settings.</p>
+    <div class="cookie-option"><label><input type="checkbox" checked disabled> Essential Cookies <span class="always-on">Always On</span></label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="analyticsCookies"> Analytics Cookies</label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="marketingCookies"> Marketing Cookies</label></div>
+    <div class="cookie-modal-btns">
+      <button id="cookieSavePrefs" class="cookie-btn-accept">Save Preferences</button>
+      <button id="cookieModalClose" class="cookie-btn-reject">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/cookie-consent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

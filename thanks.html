@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed – Velvet Dayware</title>
+<meta name="description" content="Your Velvet Dayware order has been confirmed. Thank you for your purchase.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Order Confirmed – Velvet Dayware">
+<meta property="og:description" content="Your Velvet Dayware order is confirmed.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="overflow-x-hidden">
+
+<nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Velvet Dayware logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="gift-cards.html" class="nav-link">Gift Cards</a></li>
+      <li><a href="shipping-and-returns.html" class="nav-link">Shipping & Returns</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="gift-cards.html">Gift Cards</a></li>
+    <li><a href="shipping-and-returns.html">Shipping & Returns</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag</h3>
+    <button class="cart-close-btn" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Your bag is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <a href="checkout.html" class="btn-primary cart-checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<main class="thanks-main">
+  <div class="container">
+    <div class="thanks-card" data-aos="fade-up">
+      <div class="thanks-icon-wrap">
+        <div class="thanks-icon"><i class="fa-solid fa-circle-check"></i></div>
+      </div>
+      <h1 class="thanks-title">Your order is confirmed!</h1>
+      <p class="thanks-subtitle">Thank you for your interest in Velvet Dayware. We're preparing your order and you'll receive a confirmation email shortly.</p>
+
+      <div id="orderSummaryBlock" class="thanks-order-summary">
+        <h3>Order Summary</h3>
+        <div id="thanksOrderItems"></div>
+        <div id="thanksGiftCard" class="thanks-gift-card-note" style="display:none;">
+          <i class="fa-solid fa-gift"></i>
+          <span>Gift card payment applied successfully. Your gift card discount has been reflected in your order total.</span>
+        </div>
+        <div class="thanks-totals" id="thanksTotals"></div>
+      </div>
+
+      <div class="thanks-actions">
+        <a href="index.html" class="btn-primary">Continue Shopping</a>
+        <a href="contact.html" class="btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.svg" alt="Velvet Dayware" class="footer-logo-img">
+    </div>
+    <p class="footer-tagline">Dressed in minutes. Ready for anything.</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gift-cards.html">Gift Cards</a>
+      <a href="shipping-and-returns.html">Shipping & Returns</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </nav>
+    <div class="footer-contact-row">
+      <a href="tel:+18046733450"><i class="fa-solid fa-phone"></i> +1 (804) 673-3450</a>
+      <a href="mailto:info@velvetdayware.com"><i class="fa-solid fa-envelope"></i> info@velvetdayware.com</a>
+      <span><i class="fa-solid fa-location-dot"></i> 1601 Willow Lawn Dr Suite 304, Richmond, VA 23230</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Velvet Dayware. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="float-widget" id="floatWidget">
+  <button class="float-main-btn" id="floatToggle" aria-label="Contact options">
+    <i class="fa-solid fa-comment-dots" id="floatIcon"></i>
+  </button>
+  <div class="float-options" id="floatOptions">
+    <a href="tel:+18046733450" class="float-option"><span class="float-label">Call Us</span><div class="float-option-icon"><i class="fa-solid fa-phone"></i></div></a>
+    <a href="mailto:info@velvetdayware.com" class="float-option"><span class="float-label">Email Us</span><div class="float-option-icon"><i class="fa-solid fa-envelope"></i></div></a>
+  </div>
+</div>
+
+<div id="cookieBanner" class="cookie-banner" style="display:none;">
+  <div class="cookie-content">
+    <p><strong>We use cookies</strong> to improve your experience.</p>
+    <div class="cookie-btns">
+      <button id="cookieAccept" class="cookie-btn-accept">Accept All</button>
+      <button id="cookieReject" class="cookie-btn-reject">Reject All</button>
+      <button id="cookieCustomize" class="cookie-btn-customize">Customize</button>
+    </div>
+  </div>
+</div>
+<div id="cookieModal" class="cookie-modal" style="display:none;">
+  <div class="cookie-modal-box">
+    <h3>Cookie Preferences</h3>
+    <p>Manage your cookie settings.</p>
+    <div class="cookie-option"><label><input type="checkbox" checked disabled> Essential Cookies <span class="always-on">Always On</span></label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="analyticsCookies"> Analytics Cookies</label></div>
+    <div class="cookie-option"><label><input type="checkbox" id="marketingCookies"> Marketing Cookies</label></div>
+    <div class="cookie-modal-btns">
+      <button id="cookieSavePrefs" class="cookie-btn-accept">Save Preferences</button>
+      <button id="cookieModalClose" class="cookie-btn-reject">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/cookie-consent.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const order = JSON.parse(localStorage.getItem('vd_order') || 'null');
+  if (order) {
+    const thanksOrderItems = document.getElementById('thanksOrderItems');
+    const thanksTotals = document.getElementById('thanksTotals');
+    const thanksGiftCard = document.getElementById('thanksGiftCard');
+    let subtotal = 0;
+    if (order.items && order.items.length > 0) {
+      thanksOrderItems.innerHTML = order.items.map(item => {
+        subtotal += item.price * item.qty;
+        return `<div class="thanks-order-item">
+          <img src="${item.img}" alt="${item.name}" class="thanks-item-img">
+          <div class="thanks-item-info"><span>${item.name}</span><span>Qty: ${item.qty}</span></div>
+          <span>$${(item.price * item.qty).toFixed(2)}</span>
+        </div>`;
+      }).join('');
+    }
+    if (order.giftCardApplied) {
+      thanksGiftCard.style.display = 'flex';
+      const total = Math.max(0, subtotal - order.giftCardAmount);
+      thanksTotals.innerHTML = `
+        <div class="thanks-total-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+        <div class="thanks-total-row"><span>Gift Card (${order.giftCardCode})</span><span class="gift-discount-text">-$${order.giftCardAmount.toFixed(2)}</span></div>
+        <div class="thanks-total-row total-row"><span>Total Charged</span><span>$${total.toFixed(2)}</span></div>
+      `;
+    } else {
+      thanksTotals.innerHTML = `
+        <div class="thanks-total-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+        <div class="thanks-total-row total-row"><span>Total Charged</span><span>$${subtotal.toFixed(2)}</span></div>
+      `;
+    }
+    localStorage.removeItem('vd_order');
+  }
+});
+</script>
+</body>
+</html>
